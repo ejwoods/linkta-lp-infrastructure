@@ -1,1 +1,1 @@
-# linkta-lp-infrastructure
+# linkta-lp-terraform
