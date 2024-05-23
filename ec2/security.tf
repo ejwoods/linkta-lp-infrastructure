@@ -1,5 +1,8 @@
+variable "vpc_id" {}
+
+
 resource "aws_security_group" "ecs_sg" {
-  vpc_id = aws_vpc.main.id
+  vpc_id = var.vpc_id
   tags = {
     Name = "ecs-sg"
   }
