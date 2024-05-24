@@ -16,7 +16,7 @@ resource "aws_launch_template" "ecs_instance_lt" {
                 #!/bin/bash
                 echo ECS_CLUSTER=linkta-cluster >> /etc/ecs/ecs.config
                 EOF
-  tag_specifications = {
+  tag_specifications {
     resource_type = "instance"
     tags = {
       Name = "ECSInstance"
