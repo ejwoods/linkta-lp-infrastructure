@@ -43,7 +43,3 @@ resource "aws_vpc_security_group_egress_rule" "http_egress" {
 #   ip_protocol       = "udp"
 #   cidr_ipv4         = "0.0.0.0/0"
 # }
-
-output "ecs_sg_id" {
-  value = aws_security_group.ecs_sg.id
-}
