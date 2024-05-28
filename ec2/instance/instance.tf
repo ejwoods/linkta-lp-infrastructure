@@ -12,10 +12,11 @@ resource "aws_launch_template" "ecs_instance_lt" {
   instance_type = "t2.micro"
   key_name      = var.key_name
   vpc_security_group_ids = [var.ecs_sg_id]
-  user_data = <<-EOF
+  user_data = base64encode(<<-EOF
                 #!/bin/bash
                 echo ECS_CLUSTER=linkta-cluster >> /etc/ecs/ecs.config
                 EOF
+  )
   tag_specifications {
     resource_type = "instance"
     tags = {
